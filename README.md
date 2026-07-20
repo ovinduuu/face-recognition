@@ -35,6 +35,17 @@ The triplet network clusters identities without ever training a classifier:
 ### Confusion matrix — fine-tuned ResNet-18
 ![confusion](reports/figures/confusion_resnet18.png)
 
+## Interactive demo
+
+```bash
+streamlit run app.py
+```
+
+A small [Streamlit](https://streamlit.io) app (requires trained checkpoints — see *Reproduce*):
+
+- **🔎 Identify** — upload a face (or pick one of the bundled `samples/`) and get the ResNet-18's top-5 identity predictions with confidences
+- **🆚 Verify** — pick two faces and the triplet network decides whether they're the same person via cosine similarity of their 128-d embeddings, with an adjustable decision threshold. Because it compares embeddings rather than class scores, it also works on faces outside the 62 training identities.
+
 ## Approach
 
 ### Data
@@ -59,6 +70,8 @@ All models train with AdamW + cosine LR schedule; the best checkpoint is selecte
 ## Project structure
 
 ```
+├── app.py                 # Streamlit demo (identify + verify)
+├── samples/               # a few LFW test images for the demo
 ├── src/
 │   ├── config.py          # paths & hyperparameter constants
 │   ├── data.py            # LFW loading, splits, transforms, triplet sampling
