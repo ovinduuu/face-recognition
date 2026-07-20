@@ -1,0 +1,17 @@
+# data & artifacts
+data/
+models/
+*.pt
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# os / ide
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
