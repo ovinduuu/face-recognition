@@ -82,9 +82,12 @@ All models train with AdamW + cosine LR schedule; the best checkpoint is selecte
 │   ├── train_triplet.py   # metric-learning training CLI
 │   ├── evaluate.py        # test metrics + all figures
 │   └── predict.py         # single-image inference CLI
+├── tests/                 # pytest suite (data pipeline + model shapes)
 ├── reports/
 │   ├── figures/           # generated plots (committed)
 │   └── *.txt / *.json     # classification reports & metrics
+├── .github/workflows/     # CI: tests on every push / PR
+├── pyproject.toml         # pytest configuration
 └── requirements.txt
 ```
 
@@ -103,6 +106,13 @@ python -m src.predict path/to/face.jpg --model resnet18
 ```
 
 Trains on CPU in under an hour; uses CUDA automatically when available.
+
+Run the test suite (no dataset download needed):
+
+```bash
+pip install pytest
+pytest -q
+```
 
 ## Key takeaways
 
