@@ -1,5 +1,7 @@
 # Face Recognition with Deep Learning
 
+[![CI](https://github.com/ovinduuu/face-recognition/actions/workflows/ci.yml/badge.svg)](https://github.com/ovinduuu/face-recognition/actions/workflows/ci.yml)
+
 End-to-end face recognition on the [LFW (Labeled Faces in the Wild)](http://vis-www.cs.umass.edu/lfw/) dataset, built with PyTorch. The project compares three approaches of increasing sophistication:
 
 1. **CNN from scratch** — a compact convolutional baseline trained end-to-end
